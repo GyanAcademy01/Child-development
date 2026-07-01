@@ -1,0 +1,279 @@
+/* ===== PDF Viewer Styles ===== */
+.pdf-viewer-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f0f2f5;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  user-select: none !important;
+}
+
+.pdf-viewer-container:fullscreen {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f0f2f5;
+}
+
+.pdf-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  height: 42px;
+  background: rgba(12, 36, 97, 0.95);
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  z-index: 10001;
+}
+
+.pdf-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pdf-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 250px;
+  opacity: 0.9;
+}
+
+.pdf-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.zoom-controls {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2px 4px;
+  transition: all 0.3s;
+}
+
+.zoom-controls:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.zoom-btn {
+  background: none;
+  border: none;
+  color: white;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s;
+  opacity: 0.8;
+}
+
+.zoom-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.15);
+  opacity: 1;
+}
+
+.zoom-btn:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+.zoom-value {
+  min-width: 40px;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.fullscreen-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: white;
+  padding: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.pdf-content-area {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: auto;
+  /* Allow horizontal scroll when zoomed */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Center pages by default */
+  background-color: #1a1a1b; /* Premium dark background */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  -webkit-overflow-scrolling: touch;
+  /* Smooth scroll on iOS */
+}
+
+.pdf-viewer-container:fullscreen .pdf-content-area {
+  height: calc(100vh - 42px);
+  overflow-y: auto;
+}
+
+.pdf-page-wrapper {
+  margin-bottom: 20px;
+  background-color: transparent;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.pdf-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: white;
+  gap: 15px;
+}
+
+.pdf-loader-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-left-color: #00d2ff;
+  border-radius: 50%;
+  animation: pdf-spin 1s linear infinite;
+}
+
+@keyframes pdf-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== Floating Page Indicator ===== */
+.pdf-page-indicator {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  z-index: 10002;
+  pointer-events: none;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 768px) {
+  .pdf-topbar {
+    padding: 0 6px;
+    height: 40px;
+  }
+
+  .pdf-title {
+    max-width: 120px;
+    font-size: 0.85rem;
+  }
+
+  .zoom-controls {
+    gap: 4px;
+    padding: 2px 6px;
+  }
+
+  .zoom-btn {
+    padding: 6px;
+    /* Larger hit area */
+  }
+
+  .zoom-value {
+    min-width: 32px;
+    font-size: 0.75rem;
+  }
+
+  .fullscreen-btn {
+    padding: 6px;
+  }
+
+  .pdf-content-area {
+    padding: 5px;
+    align-items: flex-start;
+    /* Better for zoomed content on mobile */
+  }
+
+  .pdf-page-wrapper {
+    margin-bottom: 15px;
+  }
+}
+
+/* Block selection and copy but allow interactions on buttons */
+.pdf-viewer-container {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+}
+
+.pdf-viewer-container button,
+.pdf-viewer-container .zoom-controls {
+  user-select: auto !important;
+  -webkit-user-select: auto !important;
+  pointer-events: auto !important;
+}
+
+/* ===== Back Button Base Styling — Compact & Rounded Square ===== */
+.custom-back-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px; /* Slightly more rounded corners as requested */
+  background: white !important;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Solid black-ish shadow around */
+  transition: all 0.2s ease-in-out;
+  color: #ff0000 !important; /* Pure red arrow color */
+  z-index: 50;
+}
+
+.custom-back-btn:hover {
+  background: #fdfdfd !important;
+  transform: scale(1.05); 
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+.custom-back-btn:active {
+  transform: scale(0.95);
+}
+
+/* Base style adjustment for topbar/internal back buttons */
+.pdf-topbar-left .custom-back-btn,
+.lg\:hidden.custom-back-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+}

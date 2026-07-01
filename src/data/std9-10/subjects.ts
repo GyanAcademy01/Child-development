@@ -1,0 +1,58 @@
+import type { Subject } from "@/types";
+
+export const subjects910: Subject[] = [
+  {
+    id: "itihas",
+    name: "ઇતિહાસ",
+    icon: "🏛️",
+    topicCount: 14,
+    color: "#10b981",
+    color2: "#8b5cf6",
+    description: "ભારતનો ઇતિહાસ - ધોરણ 9 અને 10",
+  },
+  {
+    id: "geography-and-environment",
+    name: "ભૂગોળ અને પર્યાવરણ",
+    icon: "🌍",
+    topicCount: 17,
+    color: "#f59e0b",
+    color2: "#d946ef",
+    description: "ભારતની ભૂગોળ અને પર્યાવરણ - ધોરણ 9 અને 10",
+  },
+  {
+    id: "civics",
+    name: "નાગરિકશાસ્ત્ર અને સામાજિક વ્યવસ્થા",
+    icon: "⚖️",
+    topicCount: 9,
+    color: "#3b82f6",
+    color2: "#ec4899",
+    description: "ભારતનું રાજ્યબંધારણ અને સામાજિક વ્યવસ્થા - ધોરણ 9 અને 10",
+  },
+  {
+    id: "economics",
+    name: "અર્થશાસ્ત્ર",
+    icon: "📊",
+    topicCount: 5,
+    color: "#8b5cf6",
+    color2: "#f59e0b",
+    description: "ભારતીય અર્થવ્યવસ્થા અને આર્થિક વિકાસ - ધોરણ 9 અને 10",
+  },
+  {
+    id: "pedagogy",
+    name: "શિક્ષણ પદ્ધતિશાસ્ત્ર",
+    icon: "📖",
+    topicCount: 23,
+    color: "#10b981",
+    color2: "#3b82f6",
+    description: "શિક્ષણ પદ્ધતિઓ અને વર્ગખંડ પ્રક્રિયાઓ - ધોરણ 9 અને 10",
+  },
+  {
+    id: "mcq-bank",
+    name: "MCQ બેંક",
+    icon: "📝",
+    topicCount: 18,
+    color: "#ef4444",
+    color2: "#3b82f6",
+    description: "MCQ બેંક સંપૂર્ણ ટેસ્ટ સિરીઝ - ધોરણ 9 અને 10",
+  },
+];
