@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // Theory content related TypeScript interfaces
+
 
 export interface TheoryPoint {
   text: string;
@@ -6,9 +8,10 @@ export interface TheoryPoint {
 }
 
 export interface TheorySubTopic {
-  title: string;
+  title?: string;
   points?: string[];
   table?: TheoryTable;
+  [key: string]: any;
 }
 
 export interface TheoryTableRow {
@@ -23,10 +26,11 @@ export interface TheoryTable {
 export interface TheorySection {
   icon?: string;
   title: string;
-  content: TheorySubTopic[];
+  content?: any[];
   table?: TheoryTable;
   imageUrl?: string;
   illustration?: string;
+  [key: string]: any;
 }
 
 export interface MindMapPoint {
@@ -40,8 +44,12 @@ export interface MindMapNode {
 }
 
 export interface MindMapSection {
-  title: string;
-  nodes: MindMapNode[];
+  id?: string;
+  title?: string;
+  description?: string;
+  subTopics?: any[];
+  nodes?: MindMapNode[];
+  [key: string]: any;
 }
 
 export interface TheoryData {

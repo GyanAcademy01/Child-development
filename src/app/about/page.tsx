@@ -32,19 +32,36 @@ export default function AboutPage() {
                         {/* Logo Card */}
                         <div className="glass-card rounded-2xl border-t-4 border-t-cyan-500 p-6 flex flex-col items-center justify-center relative overflow-hidden">
                             <div className="absolute inset-0 hero-shimmer pointer-events-none opacity-50" />
-                            <div className="relative mb-2">
-                                <div className="absolute -inset-2.5 rounded-full bg-gradient-to-br from-cyan-400/30 to-blue-400/30 blur-xl animate-pulse" />
-                                <Image
-                                    src="/gyan-logo.png"
-                                    alt="Gyan Academy Logo"
-                                    width={140}
-                                    height={140}
-                                    className="relative rounded-2xl p-2 bg-white/10 backdrop-blur-sm object-contain"
-                                    priority
-                                />
+                            <div className="relative mb-2 flex items-center justify-center gap-5">
+                                {/* App Logo */}
+                                <div className="relative w-[85px] h-[85px] flex items-center justify-center rounded-2xl bg-white dark:bg-zinc-800 shadow-md border border-border/40 p-1.5">
+                                    <div className="absolute -inset-2 rounded-full bg-gradient-to-br from-cyan-400/30 to-blue-400/30 blur-xl animate-pulse" />
+                                    <Image
+                                        src="/logo-cropped.png"
+                                        alt="Child Development App Logo"
+                                        width={75}
+                                        height={75}
+                                        className="relative object-contain"
+                                        priority
+                                    />
+                                </div>
+                                
+                                {/* Divider */}
+                                <span className="text-muted-foreground/30 text-lg font-light select-none">|</span>
+
+                                {/* Gyan Academy Logo */}
+                                <div className="relative w-[85px] h-[85px] flex items-center justify-center rounded-2xl bg-white dark:bg-zinc-800 shadow-md border border-border/40 p-1.5">
+                                    <Image
+                                        src="/gyan-logo.png"
+                                        alt="Gyan Academy Logo"
+                                        width={75}
+                                        height={75}
+                                        className="relative object-contain"
+                                        priority
+                                    />
+                                </div>
                             </div>
                             <h2 className="text-xl font-bold mt-4 text-foreground mb-1">Child Development</h2>
-                            <p className="text-xs text-muted-foreground font-medium bg-muted px-3 py-1 rounded-full">Version 1.0</p>
                         </div>
 
                         {/* Purpose Card */}
@@ -53,8 +70,8 @@ export default function AboutPage() {
                                 <span>🎯</span> હેતુ (Purpose)
                             </h3>
                             <p className="text-sm text-muted-foreground leading-relaxed">
-                                આ એપ ખાસ કરીને <b className="text-foreground">શિક્ષક અભિયોગ્યતા કસોટી (TAT/TET)</b> અને અન્ય સ્પર્ધાત્મક પરીક્ષાઓની તૈયારી કરતા વિદ્યાર્થીઓ માટે બનાવવામાં આવી છે. 
-                                બાળ વિકાસ અને શિક્ષણના સિદ્ધાંતોને સરળતાથી સમજવા અને તેની પ્રેક્ટિસ કરવા માટે આ એક ઉત્તમ પ્લેટફોર્મ છે.
+                                આ એપ ખાસ કરીને <b className="text-foreground">બાળ વિકાસ અને શિક્ષણના સિદ્ધાંતો</b> ની તૈયારી કરતા વિદ્યાર્થીઓ માટે બનાવવામાં આવી છે. 
+                                આ વિષયને સરળતાથી સમજવા અને તેની પ્રેક્ટિસ કરવા માટે આ એક ઉત્તમ પ્લેટફોર્મ છે.
                             </p>
                         </div>
                     </div>
@@ -63,35 +80,35 @@ export default function AboutPage() {
                     <div className="md:col-span-7 flex flex-col gap-5 sm:gap-6">
                         
                         {/* Features Grid */}
-                        <div className="glass-card rounded-2xl border-t-4 border-t-blue-500 p-5 sm:p-6">
-                            <h3 className="flex items-center gap-2 text-lg font-bold text-foreground mb-4">
+                        <div className="glass-card rounded-2xl border-t-4 border-t-blue-500 p-4 sm:p-5">
+                            <h3 className="flex items-center gap-2 text-lg font-bold text-foreground mb-3">
                                 <span>📋</span> એપની વિશેષતાઓ (Key Features)
                             </h3>
                             
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div className="bg-card/60 p-4 rounded-xl border border-border/50 hover:bg-card/90 transition-all hover:shadow-md group">
-                                    <h4 className="flex items-center gap-2 text-[15px] font-bold text-cyan-600 dark:text-cyan-400 mb-1.5 group-hover:scale-105 origin-left transition-transform">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div className="bg-card/60 p-3 rounded-xl border border-border/50 hover:bg-card/90 transition-all hover:shadow-md group">
+                                    <h4 className="flex items-center gap-2 text-[14px] font-bold text-cyan-600 dark:text-cyan-400 mb-1 group-hover:scale-105 origin-left transition-transform">
                                         <span>📖</span> Theory
                                     </h4>
-                                    <p className="text-xs text-muted-foreground leading-relaxed">બાળ વિકાસના દરેક પ્રકરણની ઊંડાણપૂર્વક સમજૂતી અને મુદ્દાસર માહિતી.</p>
+                                    <p className="text-[11px] sm:text-xs text-muted-foreground leading-relaxed">બાળ વિકાસના દરેક પ્રકરણની ઊંડાણપૂર્વક સમજૂતી અને મુદ્દાસર માહિતી.</p>
                                 </div>
-                                <div className="bg-card/60 p-4 rounded-xl border border-border/50 hover:bg-card/90 transition-all hover:shadow-md group">
-                                    <h4 className="flex items-center gap-2 text-[15px] font-bold text-green-600 dark:text-green-400 mb-1.5 group-hover:scale-105 origin-left transition-transform">
+                                <div className="bg-card/60 p-3 rounded-xl border border-border/50 hover:bg-card/90 transition-all hover:shadow-md group">
+                                    <h4 className="flex items-center gap-2 text-[14px] font-bold text-green-600 dark:text-green-400 mb-1 group-hover:scale-105 origin-left transition-transform">
                                         <span>📝</span> MCQ Tests
                                     </h4>
-                                    <p className="text-xs text-muted-foreground leading-relaxed">અગત્યના પ્રશ્નો અને પ્રકરણ મુજબ ઓનલાઇન ટેસ્ટ પ્રેક્ટિસ માટે.</p>
+                                    <p className="text-[11px] sm:text-xs text-muted-foreground leading-relaxed">અગત્યના પ્રશ્નો અને પ્રકરણ મુજબ ઓનલાઇન ટેસ્ટ પ્રેક્ટિસ માટે.</p>
                                 </div>
-                                <div className="bg-card/60 p-4 rounded-xl border border-border/50 hover:bg-card/90 transition-all hover:shadow-md group">
-                                    <h4 className="flex items-center gap-2 text-[15px] font-bold text-pink-600 dark:text-pink-400 mb-1.5 group-hover:scale-105 origin-left transition-transform">
+                                <div className="bg-card/60 p-3 rounded-xl border border-border/50 hover:bg-card/90 transition-all hover:shadow-md group">
+                                    <h4 className="flex items-center gap-2 text-[14px] font-bold text-pink-600 dark:text-pink-400 mb-1 group-hover:scale-105 origin-left transition-transform">
                                         <span>📄</span> PDF Materials
                                     </h4>
-                                    <p className="text-xs text-muted-foreground leading-relaxed">વાંચવા અને રિવિઝન કરવા માટે હાઈ-ક્વોલિટી PDF મટિરિયલ્સ.</p>
+                                    <p className="text-[11px] sm:text-xs text-muted-foreground leading-relaxed">વાંચવા અને રિવિઝન કરવા માટે હાઈ-ક્વોલિટી PDF મટિરિયલ્સ.</p>
                                 </div>
-                                <div className="bg-card/60 p-4 rounded-xl border border-border/50 hover:bg-card/90 transition-all hover:shadow-md group">
-                                    <h4 className="flex items-center gap-2 text-[15px] font-bold text-amber-600 dark:text-amber-500 mb-1.5 group-hover:scale-105 origin-left transition-transform">
+                                <div className="bg-card/60 p-3 rounded-xl border border-border/50 hover:bg-card/90 transition-all hover:shadow-md group">
+                                    <h4 className="flex items-center gap-2 text-[14px] font-bold text-amber-600 dark:text-amber-500 mb-1 group-hover:scale-105 origin-left transition-transform">
                                         <span>📊</span> Progress
                                     </h4>
-                                    <p className="text-xs text-muted-foreground leading-relaxed">તમારા આપેલા ટેસ્ટના સ્કોર અને પ્રગતિની સંપૂર્ણ માહિતી.</p>
+                                    <p className="text-[11px] sm:text-xs text-muted-foreground leading-relaxed">તમારા આપેલા ટેસ્ટના સ્કોર અને પ્રગતિની સંપૂર્ણ માહિતી.</p>
                                 </div>
                             </div>
                         </div>

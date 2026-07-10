@@ -1,10 +1,10 @@
 // Site-wide configuration constants
 
 export const siteConfig = {
-  name: "TAT GK",
-  fullName: "TAT GK - ગુજરાત TAT પરીક્ષા તૈયારી",
+  name: "Child Development",
+  fullName: "Child Development - બાળ વિકાસ",
   description:
-    "ગુજરાત TAT (Teacher Aptitude Test) પરીક્ષાની તૈયારી માટે GK Theory અને Test. ઇતિહાસ, ભૂગોળ અને વધુ.",
+    "બાળ વિકાસ અને શિક્ષણના સિદ્ધાંતોની તૈયારી માટે Theory અને Test.",
   language: "gu",
-  themeStorageKey: "tat-gk-theme",
+  themeStorageKey: "child-dev-theme",
 } as const;

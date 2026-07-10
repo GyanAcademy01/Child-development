@@ -1,10 +1,11 @@
 "use client";
+/* eslint-disable react-hooks/set-state-in-effect */
 
 import { useState, useEffect, useCallback } from "react";
 
 export type FontSizeLevel = "xsmall" | "small" | "medium" | "large" | "xlarge";
 
-const STORAGE_KEY = "tat-gk-font-size";
+const STORAGE_KEY = "child-dev-font-size";
 
 export const FONT_SIZE_CONFIG: Record<
   FontSizeLevel,

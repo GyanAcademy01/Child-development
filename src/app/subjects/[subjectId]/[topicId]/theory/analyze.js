@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from 'fs';
 
 const htmlPath = 'C:\\Users\\NARESH\\.gemini\\antigravity\\brain\\38743276-fe53-4eef-8e06-de38c4908388\\scratch\\page.html';
 const html = fs.readFileSync(htmlPath, 'utf8');

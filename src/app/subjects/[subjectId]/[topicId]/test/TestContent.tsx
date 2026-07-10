@@ -5,11 +5,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, XCircle, ChevronDown } from "lucide-react";
-import type { TestData } from "@/types";
+import type { Subject, TestData } from "@/types";
 import { playCorrectSound, playWrongSound } from "@/lib/sounds";
 
 interface TestContentProps {
-  subject: any;
+  subject: Subject;
   test: TestData;
   subjectId: string;
   topicId: string;
@@ -153,7 +153,7 @@ export default function TestContent({ subject, test, subjectId, topicId }: TestC
         : "ચિંતા ન કરો! Theory વાંચીને ફરીથી ટ્રાય કરો!";
 
     return (
-      <main className="relative flex-1 flex flex-col items-center py-6 px-4 overflow-x-hidden overflow-y-auto pb-12 custom-scrollbar">
+      <main className="relative flex-1 flex flex-col items-center px-4 py-6 lg:p-10 overflow-x-hidden overflow-y-auto pb-12 custom-scrollbar">
         {/* Background Blobs */}
         <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
           <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] max-w-[500px] max-h-[500px] rounded-full blur-[100px] sm:blur-[130px]" style={{ backgroundColor: `${subject.color}26` }} />
@@ -336,7 +336,7 @@ export default function TestContent({ subject, test, subjectId, topicId }: TestC
   }
 
   return (
-    <main className="relative flex-1 py-4 sm:py-6 px-4 sm:px-6 overflow-hidden">
+    <main className="relative flex-1 px-4 py-6 lg:p-10 overflow-hidden">
       {/* Background Blobs */}
       <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] max-w-[500px] max-h-[500px] rounded-full blur-[100px] sm:blur-[130px]" style={{ backgroundColor: `${subject.color}26` }} />
@@ -345,7 +345,7 @@ export default function TestContent({ subject, test, subjectId, topicId }: TestC
         <div className="absolute bottom-[20%] left-[10%] w-[35vw] h-[35vw] max-w-[350px] max-h-[350px] rounded-full bg-white/40 blur-[80px] sm:blur-[110px] dark:bg-white/5" />
       </div>
 
-      <div className="mx-auto max-w-[720px] w-full">
+      <div className="mx-auto max-w-3xl w-full">
         {/* Header Row (Back Button + Title) */}
         <div className="relative mb-4 flex min-h-[44px] items-center justify-center">
           <div className="absolute left-0">
@@ -388,7 +388,7 @@ export default function TestContent({ subject, test, subjectId, topicId }: TestC
                     QUESTION {currentQ + 1}
                   </div>
 
-                  <h2 className="text-base sm:text-lg font-bold text-zinc-800 dark:text-zinc-100 leading-relaxed">
+                  <h2 className="text-lg md:text-xl font-bold text-zinc-800 dark:text-zinc-100 leading-relaxed">
                     {question.question}
                   </h2>
                 </div>
@@ -402,9 +402,10 @@ export default function TestContent({ subject, test, subjectId, topicId }: TestC
                   const optionLabel = String.fromCharCode(65 + idx);
 
                   let containerStyle = "border-[1.5px] border-zinc-300/70 dark:border-zinc-800 hover:border-blue-300 dark:hover:border-blue-700 bg-[#f8f9fa] dark:bg-zinc-800/50 shadow-[0_3px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.12)]";
-                  let labelStyle = "text-zinc-500 dark:text-zinc-400 font-bold";
-                  let textStyle = "text-zinc-800 dark:text-zinc-200 font-medium";
-                  let animationProps = {};
+                  const labelStyle = "text-zinc-500 dark:text-zinc-400 font-bold";
+                  const textStyle = "text-zinc-800 dark:text-zinc-200 font-medium";
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                  let animationProps: any = {};
 
                   if (isAnswered) {
                     if (isCorrect) {
@@ -431,12 +432,12 @@ export default function TestContent({ subject, test, subjectId, topicId }: TestC
                       animate={animationProps}
                       className={`w-full flex items-center gap-3 py-2 sm:py-2.5 px-4 rounded-xl border text-left transition-all duration-200 cursor-pointer disabled:cursor-default ${containerStyle}`}
                     >
-                      <span className={`text-sm sm:text-base shrink-0 ${labelStyle}`}>
+                      <span className={`text-base md:text-lg shrink-0 ${labelStyle}`}>
                         {optionLabel}.
                       </span>
-                      {isAnswered && isCorrect && <CheckCircle2 className="w-5 h-5 text-green-600 shrink-0" />}
-                      {isAnswered && isSelected && !isCorrect && <XCircle className="w-5 h-5 text-red-500 shrink-0" />}
-                      <span className={`text-sm sm:text-base ${textStyle}`}>
+                      {isAnswered && isCorrect && <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-green-600 shrink-0" />}
+                      {isAnswered && isSelected && !isCorrect && <XCircle className="w-5 h-5 md:w-6 md:h-6 text-red-500 shrink-0" />}
+                      <span className={`text-base md:text-lg ${textStyle}`}>
                         {option}
                       </span>
                     </motion.button>

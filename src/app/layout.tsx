@@ -18,14 +18,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TAT GK - ગુજરાત TAT પરીક્ષા તૈયારી",
+  title: "Child Development - બાળ વિકાસ",
   description:
-    "ગુજરાત TAT (Teacher Aptitude Test) પરીક્ષાની તૈયારી માટે GK Theory અને Test. ઇતિહાસ, ભૂગોળ અને વધુ.",
+    "બાળ વિકાસ અને શિક્ષણના સિદ્ધાંતોની તૈયારી માટે Theory અને Test.",
   icons: {
-    icon: "/icon-192.png",
-    apple: "/icon-192.png",
-  },
-  manifest: "/manifest.json"
+    icon: "/logo-cropped.png",
+    apple: "/logo-cropped.png",
+  }
 };
 
 export default function RootLayout({
@@ -47,12 +46,12 @@ export default function RootLayout({
             __html: `
               (function() {
                 try {
-                  var theme = localStorage.getItem('tat-gk-theme');
+                  var theme = localStorage.getItem('child-dev-theme');
                   if (theme === 'dark') {
                     document.documentElement.classList.add('dark');
                   }
                   var fsSizes = {xsmall:'14px',small:'15px',medium:'16px',large:'18px',xlarge:'22px'};
-                  var fs = localStorage.getItem('tat-gk-font-size');
+                  var fs = localStorage.getItem('child-dev-font-size');
                   if (fs && fsSizes[fs]) {
                     document.documentElement.setAttribute('data-font-size', fs);
                     document.documentElement.style.setProperty('--content-font-size', fsSizes[fs]);

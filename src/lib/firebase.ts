@@ -30,7 +30,7 @@ export async function getAnalyticsInstance(): Promise<Analytics | null> {
   return analyticsInstance;
 }
 
-export async function trackEvent(eventName: string, params?: Record<string, any>) {
+export async function trackEvent(eventName: string, params?: Record<string, unknown>) {
   const analytics = await getAnalyticsInstance();
   if (analytics) {
     logEvent(analytics, eventName, params);

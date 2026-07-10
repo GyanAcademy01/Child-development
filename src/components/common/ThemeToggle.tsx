@@ -13,8 +13,8 @@ export function ThemeToggle() {
       onClick={toggleTheme}
       whileTap={{ scale: 0.9 }}
       whileHover={{ scale: 1.1 }}
-      className="flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-full
-        glass-card border border-border/50 cursor-pointer
+      className="flex h-[22px] w-[22px] sm:h-[25px] sm:w-[25px] items-center justify-center rounded-full
+        bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border border-slate-200 dark:border-zinc-700/80 cursor-pointer
         hover:border-primary/50 transition-colors duration-300"
       aria-label={isDark ? "Light mode" : "Dark mode"}
     >

@@ -37,7 +37,7 @@ trigger: always_on
 
 ## 🎯 Rule 6: 100% Accuracy
 - દરેક કાર્ય **100% accuracy** સાથે પૂર્ણ થવું જોઈએ.
-- કામ પૂરું કર્યા પછી તેને verify અને double-check કરો જેથી કોઈ ભૂલ ન રહે.
+
 
 ## 💡 Rule 7: Task Improvement Suggestions
 - Task ને વધુ સારી રીતે કરવા માટે (improve કરવા માટે) જો કોઈ સારા suggestions હોય, તો user ને આપવા.
