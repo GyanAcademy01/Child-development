@@ -43,7 +43,7 @@ export default function HomePage() {
       </div>
 
       {/* ── Main Content ── */}
-      <div className="relative z-10 w-full max-w-[340px] sm:max-w-[370px] flex flex-col gap-3.5 py-4 sm:py-6 mt-10 mb-auto sm:my-auto">
+      <div className="relative z-10 w-full max-w-[400px] sm:max-w-[440px] flex flex-col gap-3.5 py-4 sm:py-6 mt-10 mb-auto sm:my-auto">
 
         {/* Logo (Only Image, No Box) */}
         <motion.div
